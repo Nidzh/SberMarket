@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 from config import load_config
 
-config = load_config("x.env")
+config = load_config(".env")
 engine = create_engine(f'postgresql://{config.db.user}:{config.db.password}@'
                        f'{config.db.host}/{config.db.database}', echo=True)
 
