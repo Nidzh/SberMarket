@@ -1,10 +1,12 @@
 import pickle
+import random
 import time
 
-from selenium.webdriver.common.by import By
 from fake_useragent import UserAgent
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium_stealth import stealth
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -25,6 +27,7 @@ class BaseClass:
             options=self.options,
             service=Service(ChromeDriverManager().install())
         )
+        self.driver.set_window_position(random.randint(0, 1000), random.randint(0, 1000))
 
         stealth(self.driver,
                 languages=["ru-Ru", "ru"],
@@ -35,27 +38,30 @@ class BaseClass:
                 fix_hairline=True,
                 )
 
-    def page_scrolling(self):
-        from selenium.webdriver.common.keys import Keys
+    def scroll_page(self):
         html = self.driver.find_element(by=By.TAG_NAME, value='html')
         while True:
             size = self.driver.execute_script("return document.body.scrollHeight", html)
             html.send_keys(Keys.END)
-            time.sleep(1.5)
+            time.sleep(2)
             new_size = self.driver.execute_script("return document.body.scrollHeight", html)
             if new_size == size:
                 break
 
-    def save_html_file(self):
-        with open('page.html', 'w') as file:
+    def save_html_file(self, file_name: str):
+        with open(f'html/{file_name}.html', 'w') as file:
             file.write(self.driver.page_source)
 
+    def save_cookie(self):
+        pickle.dump(self.driver.get_cookies(), open("cookie", "wb"))
+
     def load_cookie(self):
-        for cookie in pickle.load(open(f"cookies", "rb")):
+        time.sleep(3)
+        for cookie in pickle.load(open(f"cookie", "rb")):
             self.driver.add_cookie(cookie)
-        time.sleep(1)
+        time.sleep(3)
         self.driver.refresh()
-        time.sleep(1)
+        time.sleep(3)
 
     def find_element_by_xpath(self, value: str):
         return self.driver.find_element(By.XPATH, value)
