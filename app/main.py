@@ -1,9 +1,8 @@
 import multiprocessing
 import time
-from multiprocessing import Pool
-from SberMarketClass import SberMarketClass
-import logging
 from loguru import logger
+
+from SberMarketClass import SberMarketClass
 
 shop_list = (
     ('ЛЕНТА', 'https://sbermarket.ru/lenta?sid=262'),
@@ -21,9 +20,11 @@ if __name__ == '__main__':
     logger.info('Запуск парсера...')
     start_time = time.time()
 
+
     def pool_thread(shop):
         window = SberMarketClass(shop_name=shop[0], url=shop[1], headless=False)
         window.get_category_list()
+
 
     with multiprocessing.Pool(multiprocessing.cpu_count() // 2) as pool:
         pool.map(pool_thread, shop_list)
