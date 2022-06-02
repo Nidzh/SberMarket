@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 
 
-async def get_all_categorys(shop_list):
+async def get_all_categories(shop_list):
     ua = UserAgent()
 
     headers = {
@@ -23,7 +23,7 @@ async def get_all_categorys(shop_list):
 
 
 async def main():
-    await get_all_categorys()
+    await get_all_categories()
 
 
 if __name__ == '__main__':
