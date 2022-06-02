@@ -1,8 +1,6 @@
 import time
-
 from loguru import logger
-
-from BaseClass import BaseClass
+from app.app.BaseClass import BaseClass
 
 
 class SberMarketClass(BaseClass):
@@ -11,7 +9,7 @@ class SberMarketClass(BaseClass):
         BaseClass.__init__(self, headless)
         self.url = url
         self.shop_name = shop_name
-        logger.info(f'Окно {shop_name} инициализировано.')
+        logger.info(f'{shop_name} запущено.')
 
     def get_category_list(self) -> list:
         start_time = time.time()
@@ -20,6 +18,7 @@ class SberMarketClass(BaseClass):
         try:
             self.driver.get(self.url)
             self.load_cookie()
+
             self.find_element_by_xpath('//*[@id="__next"]/div[2]/header/div/div[3]/div/div/div[2]/button[2]').click()
             time.sleep(3)
 
@@ -36,8 +35,8 @@ class SberMarketClass(BaseClass):
         except Exception as e:
             print(e)
         finally:
-            # self.driver.close()
-            logger.info(f'Время выполнения программы {self.shop_name}: {time.time() - start_time}')
+            logger.info(f'Список категорий {self.shop_name} получен. Время выполнения: '
+                        f'{time.time() - start_time}')
 
     def get_subcategory_list(self, url) -> list:
         start_time = time.time()
@@ -55,8 +54,9 @@ class SberMarketClass(BaseClass):
                 subcategory_url = el.get_attribute('href')
                 list_of_subcategory_urls.append(subcategory_url)
 
+            return list_of_subcategory_urls
         except Exception as e:
             print(e)
         finally:
-            # self.driver.close()
-            logger.info(f'Время выполнения программы {self.shop_name}: {time.time() - start_time}')
+            logger.info(f'Список подкатегорий {self.shop_name} получен. Время выполнения: '
+                        f'{time.time() - start_time}')

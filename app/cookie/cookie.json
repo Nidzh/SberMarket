@@ -1,0 +1,413 @@
+[
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1682952022,
+    "httpOnly": false,
+    "name": "tmr_reqNum",
+    "path": "/",
+    "secure": false,
+    "value": "20"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1717252823,
+    "httpOnly": false,
+    "name": "_ga",
+    "path": "/",
+    "secure": false,
+    "value": "GA1.2.1335006490.1654180797"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "httpOnly": false,
+    "name": "identified_address",
+    "path": "/",
+    "secure": false,
+    "value": "true"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1717252822,
+    "httpOnly": false,
+    "name": "_ga_9QYWDVGJZ3",
+    "path": "/",
+    "secure": false,
+    "value": "GS1.1.1654180797.1.1.1654180822.35"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1717252822,
+    "httpOnly": false,
+    "name": "_ga_XVJWMHHXNJ",
+    "path": "/",
+    "secure": false,
+    "value": "GS1.1.1654180797.1.1.1654180822.0"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716822,
+    "httpOnly": false,
+    "name": "rl_anonymous_id",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX18siHTQUviKW6o7tLUfvOZsLcxwdl7T12u48ujrnwwVscaFcTA7kSBFe38YXi9M%2BjhWgiwtBYiw0A%3D%3D"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "httpOnly": false,
+    "name": "t2_sid_7588506",
+    "path": "/",
+    "secure": false,
+    "value": "s1.1817530008.1654180797616.1654180822883.1.5.5.1"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716822,
+    "httpOnly": false,
+    "name": "rl_group_id",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX1%2FGZezhRFCChaIP9m6G6n90NTytKEmUH60%3D"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "httpOnly": true,
+    "name": "_Instamart_session",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "OS8zaU03WU1SeHprR2toZS9aQ2g1OHhoZFllU3g3MFpLNHYyNHpOYlNVMFd4UkpsR2M4RjV4ME50cXhiSUFjcGJWNlR1emZ2VU1SaGN4TlVxQU5tZjgzSzQza0dINmFtdC9RejBWam9kd3V1eVNPYmhBdzZtb1BYcEFpSlh0Zy9LcitlM1V6SmlMb2hmU0JFVFNiSXR6RzBjREZQOHhlUjRvNkltM3ZtdXM5VW9jemF6KzNSZzB1VjM1bTVMRlRMUGdOY3ZnWEpjWGpZUjNJUHIvQTMvZz09LS1vYWxpVU93RHFZK1lWSDV2Q0MyKzVBPT0%3D--40c552f5bdf82be4a7f829cc4210acd5380fa105"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1656772820,
+    "httpOnly": false,
+    "name": "_808db7ba1248",
+    "path": "/",
+    "secure": false,
+    "value": "%5B%7B%22source%22%3A%22%28direct%29%22%2C%22medium%22%3A%22%28none%29%22%2C%22cookie_changed_at%22%3A1654180794%7D%2C%7B%22source%22%3A%22sbermarket.ru%22%2C%22medium%22%3A%22referral%22%2C%22cookie_changed_at%22%3A1654180820%7D%5D"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716822,
+    "httpOnly": false,
+    "name": "rl_group_trait",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX185HfzKYVg%2BqGhdsliGaQsUD8X4B8%2ByitM%3D"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "httpOnly": false,
+    "name": "cookies_consented",
+    "path": "/",
+    "secure": false,
+    "value": "yes"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716822,
+    "httpOnly": false,
+    "name": "rl_user_id",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX18z4QvllcZArqqHXkVw8NjFGsGfwMzwBpg%3D"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1654267200,
+    "httpOnly": false,
+    "name": "isRetailersModalReminderShown",
+    "path": "/",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "httpOnly": false,
+    "name": "user_is_adult",
+    "path": "/",
+    "secure": false,
+    "value": "true"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654180857,
+    "httpOnly": false,
+    "name": "_gat_%5Bobject%20Object%5D",
+    "path": "/",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1682952022,
+    "httpOnly": false,
+    "name": "tmr_lvid",
+    "path": "/",
+    "secure": false,
+    "value": "11930523dd31481b0feacde44ce69b87"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1748788823,
+    "httpOnly": false,
+    "name": "__exponea_etc__",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "6716dce2-aa91-4b91-93ec-cbeb297ba628"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1656772838,
+    "httpOnly": false,
+    "name": "user-id_1.0.5_lr_lruid",
+    "path": "/",
+    "secure": true,
+    "value": "pQ8AAL7LmGISXYBGAd4ubQA%3D"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716796,
+    "httpOnly": false,
+    "name": "rl_page_init_referrer",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX1%2Buin7HwOabXqVdhrvgYMiVS1nFZXfJzjM%3D"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716822,
+    "httpOnly": false,
+    "name": "adtech_uid",
+    "path": "/",
+    "secure": true,
+    "value": "fce16fe7-7c45-4abf-b110-e4a0b65b39ef%3Asbermarket.ru"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "httpOnly": false,
+    "name": "top100_id",
+    "path": "/",
+    "secure": false,
+    "value": "t1.7588506.58560921.1654180797614"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1654267225,
+    "httpOnly": false,
+    "name": "tmr_detect",
+    "path": "/",
+    "secure": false,
+    "value": "0%7C1654180825305"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1969540797,
+    "httpOnly": false,
+    "name": "iap.uid",
+    "path": "/",
+    "secure": false,
+    "value": "f7452ba38a6d408d8f5a56c97a6a8bad"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1654182637,
+    "httpOnly": false,
+    "name": "sessionId",
+    "path": "/",
+    "secure": false,
+    "value": "1654180795953998402"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "httpOnly": false,
+    "name": "pageviewCount",
+    "path": "/",
+    "secure": false,
+    "value": "3"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654267223,
+    "httpOnly": false,
+    "name": "_gid",
+    "path": "/",
+    "secure": false,
+    "value": "GA1.2.617013834.1654180797"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654180857,
+    "httpOnly": false,
+    "name": "_gat_UA-136687175-2",
+    "path": "/",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1654182597,
+    "httpOnly": false,
+    "name": "reachedTimer",
+    "path": "/",
+    "secure": false,
+    "value": "0"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1661956796,
+    "httpOnly": false,
+    "name": "_gcl_au",
+    "path": "/",
+    "secure": false,
+    "value": "1.1.1566892558.1654180797"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1969540798,
+    "httpOnly": false,
+    "name": "adrcid",
+    "path": "/",
+    "secure": false,
+    "value": "A-qoNzrSz3Jw_Q-_dEbQ4xA"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716797,
+    "httpOnly": false,
+    "name": "_ym_d",
+    "path": "/",
+    "secure": false,
+    "value": "1654180798"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654223998,
+    "httpOnly": false,
+    "name": "adrdel",
+    "path": "/",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716796,
+    "httpOnly": false,
+    "name": "_sa",
+    "path": "/",
+    "sameSite": "Strict",
+    "secure": true,
+    "value": "SA1.737453aa-28d9-46b4-a28a-50eb91c26246.1654180796"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654182622,
+    "httpOnly": false,
+    "name": "_pk_ses.6.3ec0",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654182623,
+    "httpOnly": false,
+    "name": "_ym_visorc",
+    "path": "/",
+    "secure": false,
+    "value": "b"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654184422,
+    "httpOnly": false,
+    "name": "__exponea_time2__",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "0.09524917602539062"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1688135996,
+    "httpOnly": false,
+    "name": "_pk_id.6.3ec0",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "e9903b2a19b331eb.1654180796."
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1654252797,
+    "httpOnly": false,
+    "name": "_ym_isad",
+    "path": "/",
+    "secure": false,
+    "value": "2"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716797,
+    "httpOnly": false,
+    "name": "_ym_uid",
+    "path": "/",
+    "secure": false,
+    "value": "165418079894674536"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1682952022,
+    "httpOnly": false,
+    "name": "tmr_lvidTS",
+    "path": "/",
+    "secure": false,
+    "value": "1654180797424"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716796,
+    "httpOnly": false,
+    "name": "rl_page_init_referring_domain",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX19BvnUmn3C48rt7XMNqhsLPZ%2BlEGqvxKYM%3D"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1654182637,
+    "httpOnly": false,
+    "name": "siteEntryTime",
+    "path": "/",
+    "secure": false,
+    "value": "Thu%20Jun%2002%202022%2017%3A39%3A57%20GMT%2B0300%20(%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F)"
+  },
+  {
+    "domain": ".sbermarket.ru",
+    "expiry": 1685716823,
+    "httpOnly": false,
+    "name": "rl_trait",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "RudderEncrypt%3AU2FsdGVkX19I04K0X9p4AhdBTf%2B%2Bqtmp9d85h0jv7rrWRGJrHMinCkP3IHJPcdVCdQ%2FrH0%2BZKs8CmjonP5sYw6zfbBdbbN9YRRsP55%2FncWuASPBv1KwVX9fg6EKMTvKnzw2eh88qkAkgry1dp3dQ2gAJw9MUWRF9g9rFfSQ8ZWJcf%2B1YsFEbG03yopXi0ak9"
+  },
+  {
+    "domain": "sbermarket.ru",
+    "expiry": 1685716794,
+    "httpOnly": false,
+    "name": "external_analytics_anonymous_id",
+    "path": "/",
+    "secure": false,
+    "value": "58dd3cd4-4633-4272-8a9f-912551e7e2bd"
+  }
+]

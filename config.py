@@ -1,7 +1,6 @@
 from dataclasses import dataclass
-
 from environs import Env
-
+from pathlib import Path
 
 @dataclass
 class DbConfig:
@@ -16,10 +15,17 @@ class Miscellaneous:
     other_params: str = None
 
 
+@dataclass()
+class Directory:
+    ROOT_DIR: Path = None
+    HOME_DIR: Path = None
+
 @dataclass
 class Config:
     db: DbConfig
     misc: Miscellaneous
+    dir: Directory
+
 
 
 def load_config(path: str = None):
@@ -33,5 +39,9 @@ def load_config(path: str = None):
             user=env.str('DB_USER'),
             database=env.str('DB_NAME')
         ),
-        misc=Miscellaneous()
+        misc=Miscellaneous(),
+        dir=Directory(
+            ROOT_DIR=Path.cwd(),
+            HOME_DIR=Path.home()
+        )
     )

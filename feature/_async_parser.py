@@ -1,22 +1,11 @@
-import datetime
+import asyncio
+import aiofiles
+import aiohttp
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
-import aiohttp
-import aiofiles
-import asyncio
 
-shop_list = {
-    'METRO': 'https://sbermarket.ru/metro?sid=86',
-    'АШАН': 'https://sbermarket.ru/auchan?sid=333',
-    'АШАН СУПЕРМАРКЕТ': 'https://sbermarket.ru/auchansm?sid=12965',
-    'ЛЕНТА': 'https://sbermarket.ru/lenta?sid=262',
-    'МАГНИТ': 'https://sbermarket.ru/magnit_express?sid=4690',
-    'ГЛОБУС': 'https://sbermarket.ru/globus?sid=1947',
-    'ВКУСВИЛЛ': 'https://sbermarket.ru/vkusvill?sid=3960',
-    'ВЕРНЫЙ': 'https://sbermarket.ru/verniy_fd?sid=5972'
-}
 
-async def get_all_categorys():
+async def get_all_categorys(shop_list):
     ua = UserAgent()
 
     headers = {
@@ -28,9 +17,10 @@ async def get_all_categorys():
         for shop_name, url in shop_list.items():
             response = await session.get(url=url, headers=headers)
             text = await response.text()
-            # soup = BeautifulSoup(await response.text(), 'lxml')
+            soup = BeautifulSoup(await response.text(), 'lxml')
             async with aiofiles.open(f'{shop_name}.html', mode='w') as f:
                 await f.write(text)
+
 
 async def main():
     await get_all_categorys()
