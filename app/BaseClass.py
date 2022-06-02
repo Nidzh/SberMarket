@@ -27,7 +27,6 @@ class BaseClass:
             options=self.options,
             service=Service(ChromeDriverManager().install())
         )
-        self.driver.set_window_position(random.randint(0, 1000), random.randint(0, 1000))
 
         stealth(self.driver,
                 languages=["ru-Ru", "ru"],
@@ -67,4 +66,8 @@ class BaseClass:
         return self.driver.find_element(By.XPATH, value)
 
     def find_elements_by_class_name(self, value: str):
-        return self.driver.find_elements(By.CLASS_NAME, value)
+        return self.driver.find_elements(By.XPATH, f"//*[@class='{value}']")
+
+    def find_element_by_class_name(self, value: str):
+        return self.driver.find_element(By.XPATH, f"//*[@class='{value}']")
+

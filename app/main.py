@@ -16,17 +16,27 @@ shop_list = (
 )
 
 if __name__ == '__main__':
-    logger.add('logs/logs.log', level='DEBUG')
-    logger.info('Запуск парсера...')
-    start_time = time.time()
+    # logger.add('logs/logs.log', level='DEBUG')
+    # logger.info('Запуск парсера...')
+    # start_time = time.time()
+    #
+    #
+    # def pool_thread(shop):
+    #     window = SberMarketClass(shop_name=shop[0], url=shop[1], headless=True)
+    #     window.get_category_list()
+    #
+    #
+    # with multiprocessing.Pool(multiprocessing.cpu_count() // 2) as pool:
+    #     pool.map(pool_thread, shop_list)
+    #
+    # logger.info(f'Общее время выполнения программы : {time.time() - start_time}')
 
-
-    def pool_thread(shop):
-        window = SberMarketClass(shop_name=shop[0], url=shop[1], headless=False)
-        window.get_category_list()
-
-
-    with multiprocessing.Pool(multiprocessing.cpu_count() // 2) as pool:
-        pool.map(pool_thread, shop_list)
-
-    logger.info(f'Общее время выполнения программы : {time.time() - start_time}')
+    window = SberMarketClass(shop_name='ЛЕНТА', url='https://sbermarket.ru/lenta?sid=262', headless=False)
+    category_list = window.get_category_list()
+    print(category_list)
+    subcategory_list = []
+    for page in category_list:
+        print(page)
+        new_list = window.get_subcategory_list(page)
+        print(new_list)
+        subcategory_list.append(new_list)
