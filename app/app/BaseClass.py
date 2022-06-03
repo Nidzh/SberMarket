@@ -3,39 +3,52 @@ import time
 from pathlib import Path
 
 from fake_useragent import UserAgent
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium_stealth import stealth
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
+import os
 
 
 class BaseClass:
 
-    def __init__(self, headless=False):
-        self.useragent = UserAgent()
-        self.options = webdriver.ChromeOptions()
-        self.options.add_argument(f"user-agent={self.useragent.random}")
-        self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        self.options.add_experimental_option('useAutomationExtension', False)
+    def __init__(self, headless=False, browser: str = 'Chrome'):
+        self.browser = browser.capitalize()
+        os.environ['GH_TOKEN'] = "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"
 
-        if headless:
-            self.options.add_argument("--headless")
+        if self.browser == 'Edge':
+            from selenium.webdriver.edge.service import Service
+            from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-        self.driver = webdriver.Chrome(
-            options=self.options,
-            service=Service(ChromeDriverManager().install())
-        )
+            self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
 
-        stealth(self.driver,
-                languages=["ru-Ru", "ru"],
-                vendor="Google Inc.",
-                platform="Win32",
-                webgl_vendor="Intel Inc.",
-                renderer="Intel Iris OpenGL Engine",
-                fix_hairline=True,
-                )
+        elif self.browser == 'Opera':
+            from webdriver_manager.opera import OperaDriverManager
+
+            self.options = webdriver.ChromeOptions()
+            self.options.add_argument('allow-elevated-browser')
+            self.options.binary_location = "/usr/bin/opera"
+            self.driver = webdriver.Opera(executable_path=OperaDriverManager().install(), options=self.options)
+
+        elif self.browser == 'Firefox':
+            from selenium.webdriver.firefox.service import Service
+            from webdriver_manager.firefox import GeckoDriverManager
+
+            self.driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
+
+        elif self.browser == 'Brave':
+            from selenium.webdriver.chrome.service import Service
+            from webdriver_manager.chrome import ChromeDriverManager
+            from webdriver_manager.core.utils import ChromeType
+
+            self.driver = webdriver.Chrome(service=Service(ChromeDriverManager(chrome_type=ChromeType.BRAVE).install()))
+
+        else:
+            from selenium.webdriver.chrome.service import Service
+            from webdriver_manager.chrome import ChromeDriverManager
+            
+            self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+
 
     # ____________ Navigation ____________
 
@@ -60,12 +73,12 @@ class BaseClass:
 
     # ____________ Save & Load data ____________
 
-    def save_html_file(self, file_name: str):
+    def get_html_file(self, file_name: str):
         filepath = Path.cwd() / 'html' / f'{file_name}.html'
         with filepath.open('w') as f:
             f.write(self.driver.page_source)
 
-    def save_cookie(self, sleep_time: int = 5):
+    def get_cookies(self, sleep_time: int = 5):
         time.sleep(sleep_time)
         file = self.driver.get_cookies()
 
@@ -74,16 +87,16 @@ class BaseClass:
         with filepath.open('w', encoding='UTF-8') as f:
             json.dump(file, f)
 
-    def load_cookie(self):
+    def set_cookies(self):
         filepath = Path.cwd() / 'cookie' / 'cookie.json'
         with filepath.open('r', encoding='UTF-8') as f:
             cookie_list = json.load(f)
             for cookie in cookie_list:
                 self.driver.add_cookie(cookie)
-        time.sleep(2)
+        time.sleep(5)
         self.driver.refresh()
 
-    def save_local_storage_dump(self, sleep_time: int = 5):
+    def get_local_storage_dump(self, sleep_time: int = 5):
         time.sleep(sleep_time)
         file = self.driver.execute_script(
             "var ls = window.localStorage, items = {}; "
@@ -96,7 +109,7 @@ class BaseClass:
         with filepath.open('w', encoding='UTF-8') as f:
             json.dump(file, f)
 
-    def load_local_storage_dump(self):
+    def set_local_storage_dump(self):
         filepath = Path.cwd() / 'localstorage' / 'localstorage.json'
         with filepath.open('r', encoding='UTF-8') as f:
             dict = json.load(f)
