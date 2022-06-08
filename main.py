@@ -20,7 +20,8 @@ if __name__ == '__main__':
         logger.add(Path.cwd() / 'logs' / 'logs.log', level='DEBUG')
         logger.info('Запуск парсера...')
 
-        window = SberMarketClass(shop_name=shop[0], url=shop[1], headless=False, browser='opera')
+        window = SberMarketClass(shop_name=shop[0], url=shop[1], headless=False, browser='chrome')
         window.driver.get(window.url)
-        time.sleep(500)
+        window.check_validation_field()
+        category_urls = window.get_category_list()
         window.driver.quit()

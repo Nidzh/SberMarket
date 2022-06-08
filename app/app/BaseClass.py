@@ -15,40 +15,37 @@ class BaseClass:
         self.browser = browser.capitalize()
         os.environ['GH_TOKEN'] = "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"
 
-        if self.browser == 'Edge':
-            from selenium.webdriver.edge.service import Service
-            from webdriver_manager.microsoft import EdgeChromiumDriverManager
+        match self.browser:
+            case 'Edge':
+                from selenium.webdriver.edge.service import Service
+                from webdriver_manager.microsoft import EdgeChromiumDriverManager
+                self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
 
-            self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+            case 'Opera':
+                from webdriver_manager.opera import OperaDriverManager
+                self.options = webdriver.ChromeOptions()
+                self.options.add_argument('allow-elevated-browser')
+                self.options.binary_location = "/usr/bin/opera"
+                self.driver = webdriver.Opera(executable_path=OperaDriverManager().install(), options=self.options)
 
-        elif self.browser == 'Opera':
-            from webdriver_manager.opera import OperaDriverManager
+            case 'Firefox':
+                from selenium.webdriver.firefox.service import Service
+                from webdriver_manager.firefox import GeckoDriverManager
+                self.driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
-            self.options = webdriver.ChromeOptions()
-            self.options.add_argument('allow-elevated-browser')
-            self.options.binary_location = "/usr/bin/opera"
-            self.driver = webdriver.Opera(executable_path=OperaDriverManager().install(), options=self.options)
+            case 'Brave':
+                from selenium.webdriver.chrome.service import Service
+                from webdriver_manager.chrome import ChromeDriverManager
+                from webdriver_manager.core.utils import ChromeType
+                self.driver = webdriver.Chrome(
+                    service=Service(ChromeDriverManager(chrome_type=ChromeType.BRAVE).install()))
 
-        elif self.browser == 'Firefox':
-            from selenium.webdriver.firefox.service import Service
-            from webdriver_manager.firefox import GeckoDriverManager
-
-            self.driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
-
-        elif self.browser == 'Brave':
-            from selenium.webdriver.chrome.service import Service
-            from webdriver_manager.chrome import ChromeDriverManager
-            from webdriver_manager.core.utils import ChromeType
-
-            self.driver = webdriver.Chrome(service=Service(ChromeDriverManager(chrome_type=ChromeType.BRAVE).install()))
-
-        else:
-            from selenium.webdriver.chrome.service import Service
-            from webdriver_manager.chrome import ChromeDriverManager
-            
-            self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-
-
+            case 'Chrome':
+                from selenium.webdriver.chrome.service import Service
+                from webdriver_manager.chrome import ChromeDriverManager
+                self.options = webdriver.ChromeOptions()
+                # self.options.add_argument("--headless")
+                self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=self.options)
 
     # ____________ Navigation ____________
 
@@ -93,7 +90,6 @@ class BaseClass:
             cookie_list = json.load(f)
             for cookie in cookie_list:
                 self.driver.add_cookie(cookie)
-        time.sleep(5)
         self.driver.refresh()
 
     def get_local_storage_dump(self, sleep_time: int = 5):
