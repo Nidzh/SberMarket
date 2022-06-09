@@ -2,6 +2,7 @@ import time
 from app.app.SberMarketClass import SberMarketClass
 from loguru import logger
 from pathlib import Path
+from app.miscellaneous.URLS import categories
 
 shop_list = (
     ('METRO', 'https://sbermarket.ru/metro?sid=86'),
@@ -23,6 +24,7 @@ if __name__ == '__main__':
         window = SberMarketClass(shop_name=shop[0], url=shop[1], headless=False, browser='chrome')
         window.driver.get(window.url)
         window.check_validation_field()
-        category_urls = window.get_category_list()
-        category_urls = window.remove_unnecessary_urls(category_urls)
+        category_list = window.get_main_category_list()
+        window.get_subcategory_list(category_list)
         window.driver.quit()
+

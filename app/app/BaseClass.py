@@ -50,9 +50,6 @@ class BaseClass:
 
     # ____________ Navigation ____________
 
-    def find_element_by_xpath(self, value: str):
-        return self.driver.find_element(By.XPATH, value)
-
     def find_elements_by_class_name(self, value: str):
         return self.driver.find_elements(By.XPATH, f"//*[@class='{value}']")
 
