@@ -24,4 +24,5 @@ if __name__ == '__main__':
         window.driver.get(window.url)
         window.check_validation_field()
         category_urls = window.get_category_list()
+        category_urls = window.remove_unnecessary_urls(category_urls)
         window.driver.quit()

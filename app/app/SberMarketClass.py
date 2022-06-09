@@ -17,6 +17,7 @@ class SberMarketClass(BaseClass):
         logger.info('Получаем список категорий...')
 
         try:
+            time.sleep(3)
             button = self.find_element_by_class_name(
                 'Button_root__WvN9y Button_default__Ge25i Button_primary__voeOs '
                 'Button_mdSize__wvr_o Button_shadow__Mtz8E styles_desktopBtn__BkiGN')
@@ -49,9 +50,20 @@ class SberMarketClass(BaseClass):
                                             'Button_lgSize__zpagI Button_block__kge0L Button_shadow__Mtz8E').click()
         except Exception as e:
             print(e)
-        time.sleep(7)
+        time.sleep(3)
 
     def remove_unnecessary_urls(self, category_list: list):
         for url in category_list:
-            pass
+            if 'priedlozhieniia' in url:
+                category_list.remove(url)
+        return category_list
+
+    def check_cookie_field(self):
+        time.sleep(2)
+        try:
+            self.find_element_by_class_name('Button_root__WvN9y Button_default__Ge25i '
+                                            'Button_secondary__VeXhZ Button_mdSize__wvr_o').click()
+            time.sleep(2)
+        except Exception as e:
+            print(e)
 

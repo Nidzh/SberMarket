@@ -45,6 +45,7 @@ class BaseClass:
                 from webdriver_manager.chrome import ChromeDriverManager
                 self.options = webdriver.ChromeOptions()
                 # self.options.add_argument("--headless")
+                self.options.add_argument("--start-maximized")
                 self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=self.options)
 
     # ____________ Navigation ____________

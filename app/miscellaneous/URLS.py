@@ -325,3 +325,13 @@ categories = ['https://sbermarket.ru/metro/c/priedlozhieniia/skidki/alcohol-new?
               'https://sbermarket.ru/metro/c/na-dachu-s-bonusami-sber/molochnie-produkti?sid=86&source=category',
               'https://sbermarket.ru/metro/c/na-dachu-s-bonusami-sber/frukti-yagodi?sid=86&source=category',
               'https://sbermarket.ru/metro/c/na-dachu-s-bonusami-sber/neobkhodimoe-dlya-shashlika-i-dachi?sid=86&source=category']
+
+
+def remove_unnecessary_urls(category_list: list):
+    for url in category_list:
+        if 'skidki' in url:
+            category_list.remove(url)
+    return category_list
+
+
+print(remove_unnecessary_urls(categories))
